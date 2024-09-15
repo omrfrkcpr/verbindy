@@ -12,7 +12,7 @@ export default function Home() {
           height="64"
           width="64"
           className="mx-auto w-auto rounded-full bg-primary-foreground"
-          src="/images/verbindy-logo.png"
+          src="/verbindy-logo.png"
         />
         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight">
           Sign in to your account

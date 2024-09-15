@@ -24,6 +24,9 @@ export const metadata: Metadata = {
       url: "https://omrfrkcpr.com",
     },
   ],
+  icons: {
+    icon: [{ url: "/verbindy-logo.png", sizes: "16x16", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

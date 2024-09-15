@@ -56,7 +56,13 @@ const AuthForm = () => {
       <div className="px-4 py-6 shadow sm:rounded-lg sm:px-10 bg-primary-foreground">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <Input id="name" label="Name" register={register} errors={errors} />
+            <Input
+              id="name"
+              label="Name"
+              register={register}
+              errors={errors}
+              disabled={isLoading}
+            />
           )}
           <Input
             id="email"
@@ -64,6 +70,7 @@ const AuthForm = () => {
             type="email"
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <Input
             id="password"
@@ -71,6 +78,7 @@ const AuthForm = () => {
             type="password"
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <div>
             <Button disabled={isLoading} fullWidth type="submit">
@@ -108,7 +116,7 @@ const AuthForm = () => {
           </div>
           <div
             onClick={toggleVariant}
-            className="underline cursor-pointer hover:text-black/40 duration-100"
+            className="underline cursor-pointer hover:text-black/40 dark:text-white/70 dark:hover:text-white duration-100"
           >
             {variant === "LOGIN" ? "Sign Up" : "Sign In"}
           </div>

@@ -25,9 +25,27 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div>
-      <label className="block text-sm font-medium leading-6" htmlFor={id}>
+      <label
+        className="block text-sm font-medium leading-6 dark:text-white/70"
+        htmlFor={id}
+      >
         {label}
       </label>
+      <div className="mt-2">
+        <input
+          id={id}
+          type={type}
+          autoComplete={id}
+          disabled={disabled}
+          {...register(id, { required })}
+          // form-input comes from tailwind/form package
+          className={clsx(
+            `form-input block w-full bg-background rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 placeholder:text-gray-400 dark:placeholder:text-white/70 dark:text-white/90  focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6`,
+            errors[id] && "focus:ring-rose-500",
+            disabled && "opacity-50 cursor-default"
+          )}
+        />
+      </div>
     </div>
   );
 };
